@@ -1,7 +1,7 @@
 import React from 'react'
 import TodoItem from './TodoItem'
 
-const TodoList = ( { todoList } ) => {
+const TodoList = ( { todoList, onToggle, onDelete, onUpdate } ) => {
 
     // const todoList = [
     //     { no : 1, name : '할 일1', status: 0},
@@ -13,7 +13,7 @@ const TodoList = ( { todoList } ) => {
         <ul className="todoList">
             {/* 코드가 한줄일 때는 리턴 생략 가능 {}대신 () 로 표시 */}
             {todoList.map( (todo) => (
-                <TodoItem key={todo.no} todo={todo} />
+                <TodoItem key={todo.no} todo={todo} onToggle={onToggle} onDelete={onDelete} onUpdate={onUpdate} />
             ))}
         </ul>
     )
